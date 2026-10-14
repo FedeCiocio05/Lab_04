@@ -1,0 +1,12 @@
+from stand import Stand
+
+class StandPremium(Stand):
+    def __init__(self, codice, superficie, padiglione, prezzo_base, posizione):
+        super().__init__(codice, superficie, padiglione, prezzo_base)
+        self.__posizione = posizione
+
+    def calcola_prezzo(self):
+        return super().calcola_prezzo() * 1.30
+
+    def __str__(self):
+        return f'{super().__str__()} - Posizione Premium: {self.__posizione}'
